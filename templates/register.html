@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+<link rel="stylesheet" href="../styles.css" /> 
+
+{% block title %}Index{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <style>
+        /* Add any additional styles here */
+    </style>
+{% endblock %}
+
+{% block body %}
+    <h1>Hello, world!</h1>
+    <p>This is on index.html</p>
+    
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        
+        <!-- Username field -->
+        <p>
+            {{ form.username.label }} {{ form.username(size=32) }}
+        </p>
+
+        <!-- Email field -->
+        <p>
+            {{ form.email.label }} {{ form.email(size=32) }}
+        </p>
+
+        <!-- Password field -->
+        <p>
+            {{ form.password.label }} {{ form.password(size=32) }}
+        </p>
+
+        <!-- Confirm Password field -->
+        <p>
+            {{ form.confirm_password.label }} {{ form.confirm_password(size=32) }}
+        </p>
+
+        <!-- Submit button -->
+        <p>{{ form.submit() }}</p>
+    </form>
+
+    {% if name %}
+    <script>
+        alert("Hello, {{ name }}!");
+    </script>
+    {% endif %}
+{% endblock %}
