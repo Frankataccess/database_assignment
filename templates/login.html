@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Index{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <style>
+    </style>
+{% endblock %}
+
+{% block body %}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+    <div class="page-header">
+        <h1 id="login-header">Login Page</h1>
+    </div>
+
+    <form method="POST", id="all-fields">
+        {{ form.hidden_tag() }}
+        <!-- Email field -->
+        <p id="h">
+            {{ form.email.label }} {{ form.email() }}
+        </p>
+        <!-- Password field -->
+        <p>
+            {{ form.password.label }} {{ form.password() }}
+        </p>
+        <!-- Keep me logged in field -->
+        <p>
+            {{ form.remember_log.label }} {{ form.remember_log() }}
+        </p>
+        <!-- Log in field -->
+        <p>
+            {{ form.submit() }}
+        </p>
+        
+        
+        
+        
+    </form>
+{% endblock %}
